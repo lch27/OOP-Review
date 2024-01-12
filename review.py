@@ -1,5 +1,10 @@
 class Item:
-    def __init__(self, name, price, quantity):
+    def __init__(self, name: str, price: int, quantity = 0):
+        #run validations to the received arguments
+        assert price >= 0, f"Price  {price} is not greater than or equal to zero"
+        assert quantity >= 0, f"Quantity  {quantity} is not greater than or equal to zero"
+
+        #assign to self object
         self.name = name
         self.price = price
         self.quantity = quantity
@@ -9,7 +14,7 @@ class Item:
 
 
 #Instances
-item1 = Item("Chocolate Cake", 15, 50)
+item1 = Item("Chocolate Cake", 14, 2)
 
 item2 = Item("Watermelon Juice", 9, 30)
 
